@@ -19,9 +19,15 @@ namespace MyBackendApi.Services
             return _context.Products.ToList();
         }
 
+        
         public Product GetProductById(int id)
         {
-            return _context.Products.Find(id);
+            return GetProductById(id, _context.Products.FirstOrDefault());
+        }
+
+        public Product GetProductById(int id, Product? product)
+        {
+            return product;
         }
 
         public void AddProduct(Product product)
@@ -44,6 +50,12 @@ namespace MyBackendApi.Services
                 _context.Products.Remove(product);
                 _context.SaveChanges();
             }
-        }
+        } 
+
     }
 }
+
+
+
+
+

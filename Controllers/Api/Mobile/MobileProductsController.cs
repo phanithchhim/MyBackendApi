@@ -45,7 +45,7 @@ namespace MyBackendApi.Controllers.Api.Mobile
             if (id != product.Id)
             {
                 return BadRequest();
-            }
+            } 
 
             _productService.UpdateProduct(product);
             return NoContent();
