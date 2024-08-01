@@ -1,6 +1,41 @@
-@MyBackendApi_HostAddress = http://localhost:5041
+# @MyBackendApi_HostAddress = http://localhost:5041
+# # @MyBackendApi_HostAddress = http://localhost:7225
+# GET {{MyBackendApi_HostAddress}}/weatherforecast/
+# Accept: application/json
 
-GET {{MyBackendApi_HostAddress}}/weatherforecast/
-Accept: application/json
+# ###
 
-###
+
+# Get all shops
+GET http://localhost:5041/api/shops
+
+# Get a single shop by ID
+GET http://localhost:5041/api/shops/1
+
+# Create a new shop
+POST http://localhost:5041/api/shops
+Content-Type: application/json
+
+{
+  "shopName": "New Shop",
+  "shopUrl": "http://newshop.com",
+  "shopDescription": "A new shop description",
+  "shopAddress": "123 New Address",
+  "shopPhone": "123-456-7890"
+}
+
+# Update an existing shop
+PUT http://localhost:5041/api/shops/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "shopName": "Updated Shop",
+  "shopUrl": "http://updatedshop.com",
+  "shopDescription": "An updated shop description",
+  "shopAddress": "456 Updated Address",
+  "shopPhone": "098-765-4321"
+}
+
+# Delete a shop
+DELETE http://localhost:5041/api/shops/1

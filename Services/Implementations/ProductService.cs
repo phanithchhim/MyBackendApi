@@ -2,8 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using MyBackendApi.Data;
 using MyBackendApi.Models;
+using MyBackendApi.Services.Interface;
 
-namespace MyBackendApi.Services
+namespace MyBackendApi.Services.Implementations
 {
     public class ProductService : IProductService
     {
@@ -19,7 +20,7 @@ namespace MyBackendApi.Services
             return _context.Products.ToList();
         }
 
-        
+
         public Product GetProductById(int id)
         {
             return GetProductById(id, _context.Products.FirstOrDefault());
@@ -50,7 +51,7 @@ namespace MyBackendApi.Services
                 _context.Products.Remove(product);
                 _context.SaveChanges();
             }
-        } 
+        }
 
     }
 }

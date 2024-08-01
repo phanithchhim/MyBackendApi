@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using MyBackendApi.Models;
 
-namespace MyBackendApi.Services
+namespace MyBackendApi.Services.Interface
 {
     public interface IProductService
     {
